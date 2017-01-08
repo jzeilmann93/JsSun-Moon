@@ -1,0 +1,157 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+		<style type="text/css">
+			html, body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			.black{
+				background-color: black;
+			}
+			.white{
+				background-color: white;
+			}
+
+			#orb{
+				height: 300px;
+				width: 300px;
+				border-radius: 100%;
+				padding: 20px;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: #blue;
+			}
+
+			#sky{
+				height: 100%;
+				width: 100%;
+			}
+
+			.sun{
+				background-color: #ffdd00;
+				border: 10px solid #f1c40f;
+			}
+			.moon{
+				background-color: #bdc3c7;
+				border: 10px solid #eaeff2;
+			}
+			.night{
+				background-color: #2c3e50;
+			}
+			.day{
+				background-color: #37d8e6;
+			}
+			.sun:hover{
+				border: 20px solid #f1c40f;
+			}
+
+			#moonspot1{
+				height: 40px;
+				width: 40px;
+				border-radius: 100%;
+				float: right;
+				margin: 20px;
+			}
+			#moonspot2{
+				height: 80px;
+				width: 80px;
+				border-radius: 100%;
+				float: right;
+				margin: 20px;
+			}
+			#moonspot3{
+				height: 180px;
+				width: 180px;
+				border-radius: 100%;
+				float: right;
+				margin: 20px;
+			}
+			.visable{
+				background-color: #eaeff2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="orb" class="sun">
+			<div id="moonspot1"></div>
+			<div id="moonspot2"></div>
+			<div id="moonspot3"></div>
+		</div>
+		<div id="sky" class="day"></div>
+		<script>
+			//Declare five variables named: orb, sky, moonspot1, moonspot2, and moonspot3
+			//These variables will reference the element they are named after.
+			var orb = document.getElementById("orb");
+			var sky = document.getElementById("sky");
+			var moonspot1 = document.getElementById("moonspot1");
+			var moonspot2 = document.getElementById("moonspot2");
+			var moonspot3 = document.getElementById("moonspot3");
+
+			//Give the orb variable an onclick event that will:
+			//Check to see if the className is sun. If it's sun change it to moon
+			//and vice versa.
+
+			orb.onclick = function(){
+				if(this.className == "sun"){
+					this.className = "moon";
+			}
+				else{
+					this.className = "sun";
+				}
+				if(sky.className == "day"){
+					sky.className = "night";
+				}
+				else{
+					sky.className = "day";
+				}
+			
+
+
+
+
+				//Check to see if the className for sky is set to day.
+				//If it's day change it to night and vice versa.
+
+				//Check to see if the className for moonspot1 is set to visable.
+				//If it's visable remove the class.  Otherwise add it.
+
+				if(moonspot1.className == "visable"){
+					moonspot1.className = null;
+				}
+				else{
+					moonspot1.className = ("visable");
+				}
+
+
+				//Check to see if the className for moonspot2 is set to visable.
+				//If it's visable remove the class.  Otherwise add it.
+				if(moonspot2.className == "visable"){
+					moonspot2.className = null;
+				}
+				else{
+					moonspot2.className = ("visable");
+				}
+
+
+				//Check to see if the className for moonspot3 is set to visable.
+				//If it's visable remove the class.  Otherwise add it.
+				if(moonspot3.className == "visable"){
+					moonspot3.className = null;
+				}
+				else{
+					moonspot3.className = ("visable");
+				}
+
+			};
+		</script>
+	</body>
+
+</html>
